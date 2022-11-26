@@ -16,8 +16,7 @@
 using namespace std;
 
 
-class ThreadPool
-{
+class ThreadPool{
 public:
   ThreadPool();
   ThreadPool(int pool_size);

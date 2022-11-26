@@ -1,24 +1,23 @@
-#include "ThreadPool.h"
 
 //#include "threadpool.h"
-
+//#include <TP/ThreadPool.h>
+#include "../include/TP/ThreadPool.h"
 #include <iostream>
 
 using namespace std;
 
 const int MAX_TASKS = 4;
 
-void hello(void* arg)
-{
+void hello(void* arg){
   int* x = (int*) arg;
   cout << "Hello " << *x << endl;
-//  cout << "\n";
+  //  cout << "\n";
 }
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]){
   ThreadPool tp(2);
   int ret = tp.initialize_threadpool();
+  
   if (ret == -1) {
     cerr << "Failed to initialize thread pool!" << endl;
     return 0;
